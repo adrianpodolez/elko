@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Życzenia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #greetings {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showGreetings() {
+            var name = document.getElementById("name").value.trim();
+            var greetings = document.getElementById("greetings");
+
+            if (name.slice(-1) === "a") {
+                greetings.innerHTML = "<img src='xd.png' alt='female'>" + "<br>Szanowna Pani " + name;
+            } else if (name.toLowerCase() === "kuba" || (name.slice(-1) !== "a" && name !== "")) {
+                greetings.innerHTML = "<img src='xp.png' alt='male'>" + "<br>Szanowny Pana " + name;
+            } else {
+                greetings.innerHTML = "Proszę wprowadzić imię.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Podaj swoje imię</h1>
+        <input type="text" id="name" placeholder="Wpisz swoje imię">
+        <button onclick="showGreetings()">Przejdź dalej</button>
+        <div id="greetings"></div>
+    </div>
+</body>
+</html>
